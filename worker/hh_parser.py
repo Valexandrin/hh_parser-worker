@@ -1,12 +1,12 @@
-import time
-import requests
 import json
-import httpx
+import time
+from worker.config import config
 
-from parser.config import config
+import httpx
 
 hh_api = config.source.url
 endpoint = f'{config.endpoint.url}/vacancies'
+
 
 def get_vacancies(page=1):
     params = {
@@ -91,11 +91,10 @@ def db_clean(actual_ids: list):
             ))
 
 
-def run_parser():
+def run_parser(delay):
     while True:
-        print('Parser is running')
         db_update()
-        time.sleep(3600)
+        time.sleep(delay)
 
 
 if __name__ == '__main__':

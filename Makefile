@@ -6,5 +6,4 @@ lint:
 	@flake8 backend
 
 run:
-	@python -m parser.hh
-	
+	@python -m worker
