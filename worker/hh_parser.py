@@ -10,7 +10,8 @@ endpoint = f'{config.endpoint.url}/vacancies'
 
 def get_vacancies(page=1):
     params = {
-            'text': 'NAME:Python (разработчик OR developer OR программист) NOT (full-stack OR fullstack OR middle OR senior), удаленная работа',
+            'text': 'NAME:(Руководитель проекта) NOT (ассистент OR продаж*)',
+            'area': [1624, 1646, 1347], # Татарстан, Удмуртия, Башкортостан
             'page': page, # Индекс страницы поиска на HH
             'per_page': 100 # Кол-во вакансий на 1 странице
         }
